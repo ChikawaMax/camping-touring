@@ -4,11 +4,9 @@ import { ModeToggle } from "@/components/ModeToggle";
 const Home = () => {
   return (
     <main>
-      <div className="flex">
-        <h1 className="m-5 font-bold	">北海道ツーリング向けキャンプ場</h1>
-        <div className="m-2">
-          <ModeToggle />
-        </div>
+      <div className="flex items-center">
+        <h1 className="font-bold mx-3">北海道ツーリング向けキャンプ場</h1>
+        <ModeToggle />
       </div>
       <Datetable />
     </main>
