@@ -9,36 +9,63 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      camp_info: {
+      animal_history: {
         Row: {
           created_at: string
           id: number
-          キャンプ場名: string
-          住所: string
-          値段: string
-          最寄りの温泉: string
-          受付時間: string
-          地域: string
+          name: string
+          type: string
+          url: string
+          years: string
         }
         Insert: {
           created_at?: string
           id?: number
-          キャンプ場名: string
-          住所: string
-          値段: string
-          最寄りの温泉: string
-          受付時間: string
-          地域: string
+          name: string
+          type: string
+          url: string
+          years: string
         }
         Update: {
           created_at?: string
           id?: number
-          キャンプ場名?: string
-          住所?: string
-          値段?: string
-          最寄りの温泉?: string
-          受付時間?: string
-          地域?: string
+          name?: string
+          type?: string
+          url?: string
+          years?: string
+        }
+        Relationships: []
+      }
+      camp_info: {
+        Row: {
+          address: string
+          area: string
+          camp_name: string
+          created_at: string
+          id: number
+          price: string
+          reception_time: string
+          spa: string
+        }
+        Insert: {
+          address: string
+          area: string
+          camp_name: string
+          created_at?: string
+          id?: number
+          price: string
+          reception_time: string
+          spa: string
+        }
+        Update: {
+          address?: string
+          area?: string
+          camp_name?: string
+          created_at?: string
+          id?: number
+          price?: string
+          reception_time?: string
+          spa?: string
         }
         Relationships: []
       }

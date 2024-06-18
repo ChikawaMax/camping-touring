@@ -15,14 +15,14 @@ import { Button } from "./ui/button";
 
 // キャンプ情報の型を定義
 interface CampInfo {
-  created_at: string;
-  id: number;
-  キャンプ場名: string;
-  住所: string;
-  値段: string;
-  最寄りの温泉: string;
-  受付時間: string;
-  地域: string;
+  address: string
+  area: string
+  camp_name: string
+  created_at: string
+  id: number
+  price: string
+  reception_time: string
+  spa: string
 }
 
 const Datetable = () => {
@@ -53,7 +53,7 @@ const Datetable = () => {
     if (region === "") {
       setFilteredCamps(camps);
     } else {
-      setFilteredCamps(camps.filter((camp) => camp.地域 === region));
+      setFilteredCamps(camps.filter((camp) => camp.area === region));
     }
   }, [region, camps]);
 
@@ -81,12 +81,12 @@ const Datetable = () => {
         <TableBody>
           {filteredCamps.map((camp) => (
             <TableRow key={camp.id}>
-              <TableCell>{camp.キャンプ場名}</TableCell>
-              <TableCell>{camp.住所}</TableCell>
-              <TableCell>{camp.値段}</TableCell>
-              <TableCell>{camp.受付時間}</TableCell>
-              <TableCell>{camp.最寄りの温泉}</TableCell>
-              <TableCell>{camp.地域}</TableCell>
+              <TableCell>{camp.camp_name}</TableCell>
+              <TableCell>{camp.address}</TableCell>
+              <TableCell>{camp.price}</TableCell>
+              <TableCell>{camp.reception_time}</TableCell>
+              <TableCell>{camp.spa}</TableCell>
+              <TableCell>{camp.area}</TableCell>
             </TableRow>
           ))}
         </TableBody>
